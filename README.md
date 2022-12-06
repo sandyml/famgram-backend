@@ -16,7 +16,7 @@ My project is to show Family Photos privately only for family members, showing i
 
 
 # How To Use 
-- Login 
+- Login / Logout
 - Post photos of family members 
 - Princess (examples) and their family 
 
