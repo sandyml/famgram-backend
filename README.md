@@ -11,6 +11,7 @@ My project is to show Family Photos privately only for family members, showing i
 
 # Installation (How To Use) / Setup
 * Fork and clone
+* Fork and clone Front-End [Link](https://github.com/sandyml/famgram-frontend)
 * Open project, run yarn install (or npm install if you use npx)
 * Run yarn start
 
