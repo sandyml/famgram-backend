@@ -11,19 +11,12 @@ class ApplicationController < Sinatra::Base
 # end
 
   get "/" do
-    { message: "Good luck with your project!" }.to_json
+    tada = 90 + 100
+    { message: "Good luck with your project! #{tada} % " }.to_json
   end
-  
-  # get "/hello-world" do
-  #   { something_else: "Hello World!" }
-  # end
-  
-  get "/photos" do
-    { message: "This is Gram Photos" }.to_json
-  end
-  # get "/gram-photos" do
-  #   photos = Photo.all
-  #   photos.to_json
-  # end
 
+  get "/photos" do
+    { another_message: "This the Photos GET Request"}.to_json
+  end
+  
 end
