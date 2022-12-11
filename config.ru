@@ -12,5 +12,4 @@ end
 use Rack::JSONBodyParser
 
 # Our application
-use GramController
 run ApplicationController
