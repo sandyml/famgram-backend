@@ -1,3 +1,0 @@
-class GramController < ApplicationController
-
-end 
