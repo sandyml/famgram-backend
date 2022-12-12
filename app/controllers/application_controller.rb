@@ -9,8 +9,8 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/quotes" do
-    photos = Photo.all 
-    photos.to_json 
+    quotes = Quote.all 
+    quotes.to_json 
     # Quote.all.to_json 
   end
 
