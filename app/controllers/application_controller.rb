@@ -9,13 +9,15 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/quotes" do
-    # photos = Photo.all 
-    # photos.to_json 
-    Quote.all.to_json 
+    photos = Photo.all 
+    photos.to_json 
+    # Quote.all.to_json 
   end
 
   post "/quotes" do
-    binding.pry
+    # binding.pry
+    quote = Quote.create(param)
+    quote.to_json
   end
   
 end
