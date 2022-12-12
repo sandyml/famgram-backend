@@ -15,7 +15,6 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/quotes" do
-    # binding.pry
     quote = Quote.create(param)
     quote.to_json
   end
