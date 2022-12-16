@@ -1,25 +1,26 @@
-puts "🌱 Seeding spices..."
+# puts "🌱 Seeding spices..."
+puts "Clearing old data..."
+QuoteUsername.destroy_all
+Username.destroy_all
+Quote.destroy_all
 
 # Seed your database here
 
-# Quote.create(
-#  title: "Your Own Pace", 
-#  description: "Your direction is more important than your speed."
-# )
+Quote.create(
+ title: "Your Own Pace", 
+ description: "Your direction is more important than your speed."
+)
 
-# Quote.create(
-#  title: "Positive Mindset", 
-#  description: "If they dont know you personally. Dont take it personal."
-# )
+Quote.create(
+ title: "Positive Mindset", 
+ description: "If they dont know you personally. Dont take it personal."
+)
 
-# Quote.create(
-#  title: "Successful Mind", 
-#  description: "It is never too late to be what you might have been."
-# )
+Quote.create(
+ title: "Successful Mind", 
+ description: "It is never too late to be what you might have been."
+)
 
-# puts "Clearing old data..."
-# Quote.destroy_all
-# Person.destroy_all
 
 # create a quote and add it to person / associate 
 # puts "Seeding quotes..."
@@ -39,25 +40,21 @@ puts "🌱 Seeding spices..."
 #  biography: "Change in mentality and want to be successful"
 # )
 
-samantha = Username.find_by(
- name: "Samantha", 
- bio: "Student need inspiration"
+samantha = Username.create(
+ name: "Samantha"
 )
 
-peter = Username.find_by(
- name: "Peter", 
- bio: "Need motivation and inspiration"
+peter = Username.create(
+ name: "Peter"
 )
 
-sebastian = Username.find_by(
- name: "Sebastian", 
- bio: "Change in mentality and want to be successful"
+sebastian = Username.create(
+ name: "Sebastian"
 )
 
-Quote.first.update(username_ids: [samantha.id, peter.id, sebastian.id])
-Quote.second.update(username_ids: [samantha.id, peter.id, sebastian.id])
-Quote.third.update(username_ids: [samantha.id, peter.id, sebastian.id])
-Quote.fourth.update(username_ids: [samantha.id, peter.id, sebastian.id])
-
+Quote.first.update(username_id: samantha.id)
+Quote.second.update(username_id: samantha.id)
+Quote.third.update(username_id: peter.id)
+Quote.fourth.update(username_id: sebastian.id)
 
 puts "✅🌱 Done seeding! Ready to plant!"

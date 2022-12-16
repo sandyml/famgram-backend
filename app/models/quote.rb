@@ -1,6 +1,5 @@
 class Quote < ActiveRecord::Base
- belongs_to :username, dependent: :destroy
- has_many :quotes, through: :username
+ belongs_to :username
 end
 
-# attr_accessible :username, :quote
+# attr_accessor :username, :quote
