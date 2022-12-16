@@ -1,7 +1,10 @@
-# Fam Photogram App
+# Overview
 
-## Overview
-My project is to show Family Photos privately only for family members, showing images and description about the photos.
+### Backend
+
+## Affirmations / Motivational Quotes App
+
+Motivational and Inspirational Quotes to boost your day! 
 
 # Requirements
 * uses Node version 16.17.0
