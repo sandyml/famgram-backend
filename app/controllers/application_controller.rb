@@ -1,7 +1,7 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   # Add your routes here
-  # GET/POST requests
+  # GET/POST requests CRUD
 
   # get "/" do
   #   { message: "Good luck with your project!" }.to_json
@@ -30,6 +30,12 @@ class ApplicationController < Sinatra::Base
     new_post.to_json
   end
 
-  
-  
+  # DELETE 
+  delete 'quotes/:id' do
+    quote = Quote.create(param[id])
+    quote.destroy
+
+    quote.to_json
+  end
+
 end
