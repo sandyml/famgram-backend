@@ -20,5 +20,12 @@ class ApplicationController < Sinatra::Base
     quote = Quote.create(param)
     quote.to_json
   end
+
+  # POST 
+  post "/username/:id/quotes" do
+    new_post = Quote.create(
+      quote: params[:quote]
+    )
+  end
   
 end
