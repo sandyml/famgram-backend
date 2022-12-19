@@ -1,6 +1,6 @@
 # puts "🌱 Seeding spices..."
 puts "Clearing old data..."
-QuoteUsername.destroy_all
+# QuoteUsername.destroy_all
 Username.destroy_all
 Quote.destroy_all
 
@@ -20,7 +20,6 @@ Quote.create(
  title: "Successful Mind", 
  description: "It is never too late to be what you might have been."
 )
-
 
 # create a quote and add it to person / associate 
 # puts "Seeding quotes..."
@@ -53,8 +52,8 @@ sebastian = Username.create(
 )
 
 Quote.first.update(username_id: samantha.id)
-Quote.second.update(username_id: samantha.id)
+Quote.second.update(username_id: sebastian.id)
 Quote.third.update(username_id: peter.id)
-Quote.fourth.update(username_id: sebastian.id)
+# Quote.fourth.update(username_id: sebastian.id)
 
 puts "✅🌱 Done seeding! Ready to plant!"
