@@ -8,18 +8,18 @@ class ApplicationController < Sinatra::Base
   # end
 
   # GET 
-  get "/quotes" do
-    quotes = Quote.all 
-    quotes.to_json 
-    # Quote.all.to_json 
-  end
+  # get "/quotes" do
+  #   quotes = Quote.all 
+  #   quotes.to_json 
+  #   # Quote.all.to_json 
+  # end
 
-  # POST 
-  post "/quotes" do
-    quote = Quote.create(param)
-    quote.to_json
-    # quote.to_json(include: [:usernames])
-  end
+  # # POST 
+  # post "/quotes" do
+  #   quote = Quote.create(param)
+  #   quote.to_json
+  #   # quote.to_json(include: [:usernames])
+  # end
 
   # POST 
   # post "/username/:id/quotes" do
