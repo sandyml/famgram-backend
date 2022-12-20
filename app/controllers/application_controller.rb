@@ -3,9 +3,9 @@ class ApplicationController < Sinatra::Base
   # Add your routes here
   # GET/POST requests CRUD
 
-  get "/" do
-    { message: "Good luck with your project!" }.to_json
-  end
+  # get "/" do
+  #   { message: "Good luck with your project!" }.to_json
+  # end
 
   # GET 
   get "/quotes" do
@@ -15,11 +15,11 @@ class ApplicationController < Sinatra::Base
   end
 
   # POST 
-  # post "/quotes" do
-  #   # binding.pry
-  #   quote = Quote.create(param)
-  #   quote.to_json
-  # end
+  post "/quotes" do
+    quote = Quote.create(param)
+    quote.to_json
+    # quote.to_json(include: [:usernames])
+  end
 
   # POST 
   # post "/username/:id/quotes" do

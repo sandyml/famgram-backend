@@ -12,6 +12,6 @@ end
 use Rack::JSONBodyParser
 
 # Our application
-# use UsernameController 
-# use QuotesController 
+# use UsernamesController 
+use QuotesController 
 run ApplicationController
