@@ -12,13 +12,13 @@ class QuotesController < ApplicationController
     # quote.to_json(include: [:usernames])
   end
 
-  post "/username/:id/quotes" do
-    new_post = Quote.create(
-      quote: params[:quote],
-      username: params[:username],
-    )
-    new_post.to_json
-  end
+  # post "/username/:id/quotes" do
+  #   new_post = Quote.create(
+  #     quote: params[:quote],
+  #     username: params[:username],
+  #   )
+  #   new_post.to_json
+  # end
 
   # DELETE 
   # delete 'quotes/:id' do
@@ -26,6 +26,11 @@ class QuotesController < ApplicationController
   #   quote.destroy
 
   #   quote.to_json
+  # end
+
+  # private
+  # def user_params
+  #   params.require(:username).permit(:username, :password)
   # end
 
 

@@ -56,4 +56,15 @@ Quote.second.update(username_id: sebastian.id)
 Quote.third.update(username_id: peter.id)
 # Quote.fourth.update(username_id: sebastian.id)
 
+
+
+# 20.times do 
+#  Username.create(
+#   quote: Faker::Quote.
+#   username: Faker::Name.name
+#  )
+# end
+
+
+
 puts "✅🌱 Done seeding! Ready to plant!"
