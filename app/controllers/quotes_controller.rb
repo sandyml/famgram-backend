@@ -1,5 +1,5 @@
 class QuotesController < ApplicationController
-
+  # CRUD 
    get "/quotes" do
     quotes = Quote.all 
     quotes.to_json 
@@ -7,7 +7,7 @@ class QuotesController < ApplicationController
   end
 
   post "/quotes" do
-    quote = Quote.create(param)
+    quote = Quote.create(params)
     quote.to_json
     # quote.to_json(include: [:usernames])
   end
