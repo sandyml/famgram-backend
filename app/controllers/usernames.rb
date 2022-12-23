@@ -1,5 +1,6 @@
 class UsernamesController < ApplicationController
 
+  # @username = Username.create()
  get "/users" do 
   user.to_json(include:[:quotes])
   users = Username
