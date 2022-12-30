@@ -1,9 +1,7 @@
 class QuotesController < ApplicationController
-  # CRUD 
    get "/quotes" do
     quotes = Quote.all 
-    quotes.to_json 
-    # Quote.all.to_json 
+    quotes.to_json(include: :username)
   end
 
   post "/quotes" do
@@ -12,7 +10,7 @@ class QuotesController < ApplicationController
     # quote.to_json(include: [:usernames])
   end
 
-  # post "/username/:id/quotes" do
+  # post "/quotes/:id/username" do
   #   new_post = Quote.create(
   #     quote: params[:quote],
   #     username: params[:username],
@@ -21,17 +19,24 @@ class QuotesController < ApplicationController
   # end
 
   # DELETE 
-  # delete 'quotes/:id' do
-  #   quote = Quote.create(param[id])
-  #   quote.destroy
+  delete "/quotes/:id" do
+    quote = Quote.find(params[:id])
+    quote.destroy
+    quote.to_json
+  end
 
-  #   quote.to_json
-  # end
+  # patch user to :id
+  patch "/quotes/:id" do 
+    quote = Quote.find(params[:id])
+    if quote.update(params)
+      quote.to_json(include: [:username])
+    else
+      {errors: @quote.errors.full_message}.to_json 
+    end 
+  end 
 
   # private
-  # def user_params
+  # def username_params
   #   params.require(:username).permit(:username, :password)
   # end
-
-
 end
