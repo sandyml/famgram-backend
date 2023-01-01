@@ -1,4 +1,5 @@
 class QuotesController < ApplicationController
+  
    get "/quotes" do
     quotes = Quote.all 
     quotes.to_json(include: :username)
