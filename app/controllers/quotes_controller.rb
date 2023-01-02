@@ -8,25 +8,15 @@ class QuotesController < ApplicationController
   post "/quotes" do
     user = Username.find_or_create_by(params[:user])
     quote = user.quotes.create(params[:quote])
-    # quote.to_json
     quote.to_json(include: [:username])
   end
-
-  # post "/quotes/:id/username" do
-  #   new_post = Quote.create(
-  #     quote: params[:quote],
-  #     username: params[:username],
-  #   )
-  #   new_post.to_json
-  # end
-
+  
   delete "/quotes/:id" do
     quote = Quote.find(params[:id])
     quote.destroy
     quote.to_json
   end
-
-  # patch user to :id
+  
   patch "/quotes/:id" do 
     quote = Quote.find(params[:id])
     if quote.update(params)
@@ -35,10 +25,18 @@ class QuotesController < ApplicationController
       {errors: @quote.errors.full_message}.to_json 
     end 
   end 
-
+  
   # private if login and logout? check later
   # def username_params
   #   params.require(:username).permit(:username, :password)
   # end
   
 end
+
+# post "/quotes/:id/username" do
+#   new_post = Quote.create(
+#     quote: params[:quote],
+#     username: params[:username],
+#   )
+#   new_post.to_json
+# end
