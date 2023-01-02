@@ -19,6 +19,8 @@ post "/usernames" do
     end 
 end 
 
+end 
+
   # get "/usernames" do
   #  usernames = Quote.all 
   #  usernames.to_json 
@@ -52,4 +54,4 @@ end
 #   # username.to_json(include: [:quotes])
 # end
 
-end
+# end
