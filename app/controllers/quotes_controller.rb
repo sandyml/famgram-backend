@@ -30,6 +30,12 @@ class QuotesController < ApplicationController
   # def username_params
   #   params.require(:username).permit(:username, :password)
   # end
+
+  # private 
+
+  # def find_quotes
+  #   @quote = Quote.find_by_id(params[:id]) 
+  # end
   
 end
 
