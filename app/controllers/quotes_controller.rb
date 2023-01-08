@@ -2,48 +2,41 @@ class QuotesController < ApplicationController
   
    get "/quotes" do
     quotes = Quote.all 
-    quotes.to_json(include: :username)
+    quotes.to_json(include: :username) #allows only one
+    # quotes.to_json(include: [:username])
   end
 
   post "/quotes" do
     user = Username.find_or_create_by(params[:user])
-    quote = user.quotes.create(params[:quote])
-    # quotes_to_json or line 12
-    quote.to_json(include: [:username])
+    @quote = user.quotes.create(params[:quote])
+    quotes_to_json
   end
   
   delete "/quotes/:id" do
-    # find_quotes or line 17
-    quote = Quote.find(params[:id])
-    quote.destroy
-    quote.to_json
-    # @quote.to_json
+    find_quotes
+    @quote.destroy
+    quotes_to_json
   end
   
   patch "/quotes/:id" do 
-    # find_quotes or line 23
-    quote = Quote.find(params[:id])
-    if quote.update(params)
-      # @quotes_to_json or line 27
-      quote.to_json(include: [:username])
+    find_quote
+    if @quote.update(params)
+    quotes_to_json 
     else
       {errors: @quote.errors.full_message}.to_json 
     end 
   end 
   
   
-  # TO PREVENT CRY CODE 
+  # TO PREVENT DRY CODE 
   # private 
-  # def find_quotes
-  # @quote = Quote.find_by_id(params[:id]) 
-  # @quote = Quote.find_by_id(params["id"])
+  def find_quotes
+    @quote = Quote.find_by_id(params[:id]) 
+  end
   
-  # @quote = Quote.find(params[:id])
-  # end
-  
-  # def quotes_to_json
-  #   @quote.to_json(include: [:username])
-  # end 
+  def quotes_to_json
+    @quote.to_json(include: [:username])
+  end 
   
 end
 

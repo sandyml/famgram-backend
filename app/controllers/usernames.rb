@@ -1,5 +1,5 @@
 class UsernamesController < ApplicationController
-  # @username = Username.create()
+
  get "/usernames" do 
   usernames = Username.all
   usernames.to_json(include:[:quotes])
